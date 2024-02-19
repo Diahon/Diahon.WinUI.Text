@@ -1,0 +1,10 @@
+ITextServices
+ITextServices2
+ITextRange2
+ITextDocument2
+
+EM_INSERTTABLE
+TABLEROWPARMS
+TABLECELLPARMS
+
+tomCell
