@@ -24,5 +24,5 @@ public sealed class RichEditCommandBarFlyout : TextCommandBarFlyout
     public Win32RichEditBox? TargetRichEditBox => Target as Win32RichEditBox;
 
     private void AddTableButton_Click(object sender, Microsoft.UI.Xaml.RoutedEventArgs e)
-        => TargetRichEditBox?.InsertTableRow();
+        => TargetRichEditBox?.InsertTableRowAbove();
 }

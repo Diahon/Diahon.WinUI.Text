@@ -1,0 +1,3 @@
+https://learn.microsoft.com/en-us/archive/blogs/murrays/richedit-8-0-tom-table-interfaces
+https://github.com/TimoKunze/RichTextBoxControl/blob/master/src/TableRows.cpp
+https://github.com/wine-mirror/wine/blob/master/dlls/riched20/table.c

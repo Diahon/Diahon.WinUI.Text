@@ -1,9 +1,7 @@
 ﻿using Microsoft.UI.Xaml.Controls;
 using System.Runtime.InteropServices;
-using Windows.Win32.Foundation;
 using Windows.Win32.UI.Controls.RichEdit;
 using WinRT;
-using static Windows.Win32.PInvoke;
 using ITextDocument2_Win32 = Windows.Win32.UI.Controls.RichEdit.ITextDocument2;
 
 namespace Diahon.WinUI.Text;
@@ -22,23 +20,28 @@ public sealed class Win32RichEditBox : RichEditBox
         _win32Doc = (ITextDocument2_Win32)cTxtEdit;
     }
 
-    public unsafe void InsertTableRow()
+    ITextRange2 SelectionRange
     {
-        _win32Doc.GetSelection(out var selection);
-        var range = (ITextRange2)selection;
+        get
+        {
+            _win32Doc.GetSelection(out var selection).ThrowOnFailure();
+            return (ITextRange2)selection;
+        }
+    }
 
-        range.GetDuplicate2(out range);
+    public unsafe void InsertTableRowAbove(int rowCount = 1)
+    {
+        var range = SelectionRange;
+        range.GetDuplicate2(out range).ThrowOnFailure();
 
-        range.StartOf((int)tomConstants.tomRow, (int)tomConstants.tomExtend, out _);
-        range.EndOf((int)tomConstants.tomRow, (int)tomConstants.tomExtend, out _);
+        range.Expand((int)tomConstants.tomRow, out _).ThrowOnFailure();
 
         // Insert above
-        range.GetStart(out var position);
-        range.SetStart(position);
-        range.SetEnd(position);
+        range.GetStart(out var position).ThrowOnFailure();
+        range.SetStart(position).ThrowOnFailure();
+        range.SetEnd(position).ThrowOnFailure();
 
-        range.GetRow(out var row);
-
-        row.Insert(1);
+        range.GetRow(out var row).ThrowOnFailure();
+        row.Insert(rowCount).ThrowOnFailure();
     }
 }

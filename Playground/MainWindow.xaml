@@ -11,7 +11,7 @@
     </Window.SystemBackdrop>
 
     <StackPanel>
-        <dh:Win32RichEditBox x:Name="Win32Rtb">
+        <dh:Win32RichEditBox x:Name="Win32Rtb" RequestedTheme="Light">
             <dh:Win32RichEditBox.ContextFlyout>
                 <dh:RichEditCommandBarFlyout />
             </dh:Win32RichEditBox.ContextFlyout>
