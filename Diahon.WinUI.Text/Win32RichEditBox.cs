@@ -29,7 +29,7 @@ public sealed class Win32RichEditBox : RichEditBox
         }
     }
 
-    public unsafe void InsertTableRowAbove(int rowCount = 1)
+    public void InsertTableRowAbove(int rowCount = 1)
     {
         var range = SelectionRange;
         range.GetDuplicate2(out range).ThrowOnFailure();
