@@ -9,11 +9,11 @@
 	</PropertyGroup>
 
 	<PropertyGroup Label="Nuget">
-		<Version>0.1.1-alpha</Version>
-		<PackageDescription>Allow printing of a Wpf IDocumentPaginatorSource with the modern Windows PrintManager / Dialog</PackageDescription>
+		<Version>0.1.2-alpha</Version>
+		<PackageDescription>Extensions to the WinUI3 built-in RichEditBox</PackageDescription>
 		<Authors>ShortDevelopment</Authors>
 		<Company>Diahon</Company>
-		<RepositoryUrl>https://github.com/Diahon/Diahon.WinUI.Printing</RepositoryUrl>
+		<RepositoryUrl>https://github.com/Diahon/Diahon.WinUI.Text</RepositoryUrl>
 		<PackageReadmeFile>README.md</PackageReadmeFile>
 		<PackageLicenseFile>LICENSE.txt</PackageLicenseFile>
 	</PropertyGroup>
