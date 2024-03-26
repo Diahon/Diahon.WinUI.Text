@@ -1,2 +1,0 @@
-ITextServices
-ITextServices2
