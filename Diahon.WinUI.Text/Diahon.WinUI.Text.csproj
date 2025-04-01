@@ -9,7 +9,7 @@
 	</PropertyGroup>
 
 	<PropertyGroup Label="Nuget">
-		<Version>0.1.2-alpha</Version>
+		<Version>0.2.0-alpha</Version>
 		<PackageDescription>Extensions to the WinUI3 built-in RichEditBox</PackageDescription>
 		<Authors>ShortDevelopment</Authors>
 		<Company>Diahon</Company>
