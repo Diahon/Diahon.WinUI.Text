@@ -6,14 +6,14 @@ using ITextDocument2_Win32 = Windows.Win32.UI.Controls.RichEdit.ITextDocument2;
 
 namespace Diahon.WinUI.Text;
 
-public sealed class Win32RichEditBox : RichEditBox
+public sealed partial class Win32RichEditBox : RichEditBox
 {
     readonly ITextServices2_WinUIEdit _txtServices;
     readonly ITextDocument2_Win32 _win32Doc;
     public unsafe Win32RichEditBox()
     {
-        nint pCWinRTextDocument = ((IWinRTObject)Document).NativeObject.ThisPtr;
-        nint pCTxtEdit = *(nint*)(pCWinRTextDocument + 64);
+        var pCWinRTextDocument = (nint*)((IWinRTObject)Document).NativeObject.ThisPtr;
+        nint pCTxtEdit = pCWinRTextDocument[9];
 
         var cTxtEdit = Marshal.GetObjectForIUnknown(pCTxtEdit);
         _txtServices = (ITextServices2_WinUIEdit)cTxtEdit;
